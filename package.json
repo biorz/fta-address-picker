@@ -36,6 +36,7 @@
     "@tarojs/runtime": ">=3",
     "taro-ui": ">=3",
     "react": ">=16.13.0",
-    "react-dom": ">=16.13.0"
+    "react-dom": ">=16.13.0",
+    "@fta/components": "*"
   }
 }
