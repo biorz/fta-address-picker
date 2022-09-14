@@ -1,12 +1,17 @@
 // 如果组件使用的是React Hooks 写法， 删除上面的代码，换成以下写法
-import { ActionSheetProps } from '@fta/components/types/action-sheet'
-import { SelectorProps } from '@fta/components/types/selector'
-import { FC, ReactNode } from 'react'
+import { ActionSheetProps, CustomTitle } from '@fta/components/types/action-sheet'
+import { OptionWithParent, SelectorProps } from '@fta/components/types/selector'
+import { FC } from 'react'
 
 export interface AddressPickerProps
-  extends ActionSheetProps,
+  extends Omit<ActionSheetProps, 'example', 'className', 'customStyle'>,
     Omit<SelectorProps, 'options'>,
-    Partial<Pick<SelectorProps, 'options'>> {
+    Partial<Pick<SelectorProps, 'options'>>,
+    Pick<CustomTitle, 'confirmText'> {
+  /**
+   * 标题
+   */
+  title?: string | ReactElement
   /**
    * 使用自定义数据源
    * @default false
@@ -20,6 +25,10 @@ export interface AddressPickerProps
    * 数据源异步获取完毕的回调
    */
   onError?: () => void
+  /**
+   * 点击确定按钮的回调
+   */
+  onConfirm?: (selected: OptionWithParent[] | OptionWithParent[][]) => void
   /**
    * 自定义顶部区域
    */
