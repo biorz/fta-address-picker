@@ -1,3 +1,1 @@
-import AddressPicker from './src'
-
-export default AddressPicker
+export { default } from './src'
