@@ -1,6 +1,6 @@
 // 如果组件使用的是React Hooks 写法， 删除上面的代码，换成以下写法
 import { ActionSheetProps, CustomTitle } from '@fta/components/types/action-sheet'
-import { OptionWithParent, SelectorProps } from '@fta/components/types/selector'
+import { Option, OptionWithParent, SelectorProps } from '@fta/components/types/selector'
 import { FC } from 'react'
 
 export interface AddressPickerProps
@@ -18,11 +18,11 @@ export interface AddressPickerProps
    */
   useCustom?: boolean
   /**
-   * 数据源异步获取完毕的回调
+   * 默认数据源异步获取完毕的回调
    */
-  onFetch?: () => void
+  onFetch?: (options: Option[]) => void
   /**
-   * 数据源异步获取完毕的回调
+   * 默认数据源异步获取失败的回调
    */
   onError?: () => void
   /**
