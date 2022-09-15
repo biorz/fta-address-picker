@@ -10,6 +10,31 @@ export default function resolveAsyncSource(depth = 3) {
       regionLevel: depth,
     },
   }).then((res) => {
-    return (res.data?.regionTree ?? []) as Option
+    const data = (res.data?.regionTree ?? []) as Option[]
+
+    // data.unshift({
+    //   code: 0,
+    //   id: 0,
+    //   shortName: '全国',
+    //   name: '全国',
+    //   children: [
+    //     {
+    //       code: 0,
+    //       id: 0,
+    //       shortName: '全国',
+    //       name: '全国',
+    //       children: [
+    //         {
+    //           code: 0,
+    //           id: 0,
+    //           shortName: '全国',
+    //           name: '全国',
+    //           children: [],
+    //         },
+    //       ],
+    //     },
+    //   ],
+    // })
+    return data
   })
 }

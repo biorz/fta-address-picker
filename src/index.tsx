@@ -44,7 +44,7 @@ function AddressPicker(props: AddressPickerProps): JSX.Element {
   }, [])
 
   useEffect(() => {
-    if (!useCustom) onFetch?.()
+    if (!useCustom && _options.length) onFetch?.(_options)
   }, [_options])
   return (
     <ActionSheet
