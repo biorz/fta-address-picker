@@ -1,11 +1,14 @@
 import { ActionSheet, inRN, SelectorCore } from '@fta/components/index'
-import { OptionWithParent } from '@fta/components/types/selector'
-import React, { useEffect, useState } from 'react'
+import { OptionWithParent, SelectorCoreRefMethods } from '@fta/components/types/selector'
+import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import { AddressPickerProps } from '../types'
 import resolveAsyncSource from './source'
 import './style/index.scss'
 
-function AddressPicker(props: AddressPickerProps): JSX.Element {
+function _AddressPicker(
+  props: AddressPickerProps,
+  ref: ForwardedRef<SelectorCoreRefMethods>
+): JSX.Element {
   const {
     // ActionSheet Props
     isOpened,
@@ -62,6 +65,7 @@ function AddressPicker(props: AddressPickerProps): JSX.Element {
       clickOverlayOnClose={clickOverlayOnClose}>
       {prefix}
       <SelectorCore
+        ref={ref}
         options={useCustom ? options : _options}
         onChange={_onChange}
         {...selectorProps}
@@ -70,6 +74,8 @@ function AddressPicker(props: AddressPickerProps): JSX.Element {
     </ActionSheet>
   )
 }
+
+const AddressPicker = forwardRef(_AddressPicker)
 
 const defaultProps: AddressPickerProps = {
   title: '请选择地址',
