@@ -1,4 +1,4 @@
-import { ActionSheet, inRN, SelectorCore } from '@fta/components/index'
+import { ActionSheet, inRN, SelectorCore } from '@fta/components'
 import { OptionWithParent, SelectorCoreRefMethods } from '@fta/components/types/selector'
 import React, { ForwardedRef, forwardRef, useEffect, useState } from 'react'
 import { AddressPickerProps } from '../types'

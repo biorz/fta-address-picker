@@ -1,7 +1,7 @@
 // 如果组件使用的是React Hooks 写法， 删除上面的代码，换成以下写法
 import { ActionSheetProps, CustomTitle } from '@fta/components/types/action-sheet'
 import { Option, OptionWithParent, SelectorProps } from '@fta/components/types/selector'
-import { FC } from 'react'
+import { FC, ReactElement, ReactNode } from 'react'
 
 export interface AddressPickerProps
   extends Omit<ActionSheetProps, 'example', 'className', 'customStyle'>,

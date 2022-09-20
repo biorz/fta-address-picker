@@ -1,12 +1,17 @@
 {
   "name": "@fta/components-address-picker",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.0",
   "description": "通用地址选择器",
   "source": "src/index.tsx",
+  "react-native": "dist/rn/index.js",
+  "main": "dist/h5/index.js",
   "sideEffects": [
     "*.scss",
     "*.css"
   ],
+  "publishConfig": {
+    "tag": "alpha"
+  },
   "types": "types/index.d.ts",
   "keywords": [
     "taro",
@@ -18,7 +23,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn run dev:lib",
-    "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental"
+    "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
+    "build": "npm run build:rn && npm run build:nrn",
+    "build:rn": "node ./scripts/build-rn.js",
+    "build:nrn": "node ./scripts/build.js"
   },
   "dependencies": {},
   "devDependencies": {
