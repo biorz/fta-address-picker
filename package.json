@@ -26,7 +26,7 @@
     "dev:lib": "tsc --project ./tsconfig.build.json --watch --incremental",
     "build": "npm run build:rn && npm run build:nrn",
     "build:rn": "node ./scripts/build-rn.js",
-    "build:nrn": "node ./scripts/build.js"
+    "build:nrn": "cross-env TARO_ENV=h5 node ./scripts/build.js"
   },
   "dependencies": {},
   "devDependencies": {
