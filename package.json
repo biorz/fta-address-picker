@@ -1,6 +1,6 @@
 {
   "name": "@fta/components-address-picker",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "通用地址选择器",
   "source": "src/index.tsx",
   "react-native": "dist/rn/index.js",
