@@ -4,7 +4,7 @@ const path = require('path')
 async function build() {
   await rollupConfig.build({
     tsconfig: path.resolve('./tsconfig.rollup.json'),
-    external: [/@fta\/components/],
+    external: [/@fta\/components/, 'react', 'react-dom', 'prop-types'],
   })
 }
 
