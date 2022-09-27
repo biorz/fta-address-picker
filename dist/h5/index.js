@@ -60,7 +60,6 @@ function __read(o, n) {
 function resolveAsyncSource(depth) {
     if (depth === void 0) { depth = 3; }
     return Taro.request({
-        url: 'https://ymm56.com/ymm-map-app/city/queryRegionTree',
         method: 'POST',
         data: {
             callerFlag: 'Applet',

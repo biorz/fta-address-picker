@@ -3,7 +3,7 @@ import Taro from '@tarojs/taro'
 
 export default function resolveAsyncSource(depth = 3) {
   return Taro.request({
-    url: 'https://ymm56.com/ymm-map-app/city/queryRegionTree',
+    url: '',
     method: 'POST',
     data: {
       callerFlag: 'Applet',
